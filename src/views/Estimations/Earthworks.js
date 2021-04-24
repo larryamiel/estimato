@@ -233,7 +233,7 @@ function Earthworks(props) {
                         <Summary values={solutionValues} />
                     </Col>
                     <Col md="12">
-                        <Button type="submit" icon="add" onClick={e => {
+                        <Button type="submit" icon="close" onClick={e => {
                             setSummaryView(false);
                         }}>Back</Button>
                     </Col>

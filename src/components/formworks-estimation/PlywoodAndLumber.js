@@ -88,6 +88,7 @@ function PlywoodAndLumber(props) {
                                                 return values;
                                             });
                                         }} placeholder="Wood frame size">
+                                            <option value=""></option>
                                             <option value='2"x2"'>2"x2"</option>
                                             <option value='2"x3"'>2"x3"</option>
                                         </FormSelect>
@@ -102,8 +103,9 @@ function PlywoodAndLumber(props) {
                                                 return values;
                                             });
                                         }} placeholder="Wood frame thickness">
-                                            <option value='1/4"'>1/4" (6mm)</option>
-                                            <option value='1/2"'>1/2" (12mm)</option>
+                                            <option value=""></option>
+                                            <option value='1/4" (6mm)'>1/4" (6mm)</option>
+                                            <option value='1/2" (12mm)'>1/2" (12mm)</option>
                                         </FormSelect>
                                     </Col>
                                 </Row>
@@ -119,9 +121,10 @@ function PlywoodAndLumber(props) {
                                                 return values;
                                             });
                                         }}>
+                                            <option value=""></option>
                                             <option value='2"x2"'>2"x2"</option>
                                             <option value='2"x3"'>2"x3"</option>
-                                            <option value='2"x3"'>2"x4"</option>
+                                            <option value='2"x4"'>2"x4"</option>
                                         </FormSelect>
                                     </Col>
                                     <Col md="4" className="form-group">
@@ -134,9 +137,10 @@ function PlywoodAndLumber(props) {
                                                 return values;
                                             });
                                         }}>
+                                            <option value=""></option>
                                             <option value='2"x2"'>2"x2"</option>
                                             <option value='2"x3"'>2"x3"</option>
-                                            <option value='2"x3"'>2"x4"</option>
+                                            <option value='2"x4"'>2"x4"</option>
                                         </FormSelect>
                                     </Col>
                                     <Col md="4" className="form-group">
@@ -149,9 +153,10 @@ function PlywoodAndLumber(props) {
                                                 return values;
                                             });
                                         }}>
+                                            <option value=""></option>
                                             <option value='2"x2"'>2"x2"</option>
                                             <option value='2"x3"'>2"x3"</option>
-                                            <option value='2"x3"'>2"x4"</option>
+                                            <option value='2"x4"'>2"x4"</option>
                                         </FormSelect>
                                     </Col>
                                 </Row>
@@ -167,6 +172,7 @@ function PlywoodAndLumber(props) {
                                                 return values;
                                             });
                                         }}>
+                                            <option value=""></option>
                                             <option value='0.90 x 2.40'>0.90 x 2.40</option>
                                             <option value='0.90 x 2.40'>1.20 x 2.40</option>
                                         </FormSelect>
@@ -181,6 +187,7 @@ function PlywoodAndLumber(props) {
                                                 return values;
                                             });
                                         }}>
+                                            <option value=""></option>
                                             <option value="15">15 cm</option>
                                             <option value="20">20 cm</option>
                                         </FormSelect>
