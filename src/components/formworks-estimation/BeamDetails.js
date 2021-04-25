@@ -30,10 +30,10 @@ function BeamDetails(props) {
 
     return (
         <Card small className="mb-4">
-            <CardHeader className="border-bottom">
+            <CardHeader className="border-bottom card-add-header">
                 <h6 className="m-0">Beam Details</h6>
 
-                {/* <button className="btn-add-header" onClick={() => {props.incrementBeamFormCount()}}><i className="material-icons">add</i></button> */}
+                <button className="btn btn-primary btn-pill btn-add-header" onClick={() => {props.incrementBeamFormCount()}}><i className="material-icons">add</i></button>
             </CardHeader>
 
             <CardBody className="p-0">

@@ -25,10 +25,10 @@ function SepticTankDetails(props) {
 
     return (
         <Card small className="mb-4">
-            <CardHeader className="border-bottom">
+            <CardHeader className="border-bottom card-add-header">
                 <h6 className="m-0">Septic Tank Details</h6>
 
-                {/* <button className="btn-add-header" onClick={() => {props.incrementColumnFootingFormCount()}}><i className="material-icons">add</i></button> */}
+                <button className="btn btn-primary btn-pill btn-add-header" onClick={() => {props.incrementSepticTankFormCount()}}><i className="material-icons">add</i></button>
             </CardHeader>
             <CardBody className="p-0 pb-3">
                 <ListGroup flush>

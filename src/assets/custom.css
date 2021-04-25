@@ -1,0 +1,15 @@
+.card-add-header {
+    display: flex;
+}
+
+.card-add-header h6 {
+    width: 100%;
+}
+
+.card-add-header .btn-add-header {
+    padding: 4px 5px;
+}
+
+.card-add-header .btn-add-header i {
+    font-size: 14px;
+}

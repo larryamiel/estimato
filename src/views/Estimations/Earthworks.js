@@ -90,7 +90,7 @@ function Earthworks(props) {
         setSpeticTankFormCount(count => count + 1);
     }
 
-    const incrementOnFillFormCOunt = () => {
+    const incrementOnFillFormCount = () => {
         setOnFillFormCount(count => count + 1);
     }
 
@@ -242,10 +242,10 @@ function Earthworks(props) {
                 <Row>
                     <Col>
                         {[...Array(columnFootingFormCount)].map((e, i) => <ColumnFootingDetails key={i} index={i} incrementColumnFootingFormCount={incrementColumnFootingFormCount} setEarthworkValues={setEarthworkValues} />)}
-                        {[...Array(wallFootingFormCount)].map((e, i) => <WallFootingDetails key={i} index={i} incrementColumnFootingFormCount={incrementWallFootingFormCount} setEarthworkValues={setEarthworkValues} />)}
+                        {[...Array(wallFootingFormCount)].map((e, i) => <WallFootingDetails key={i} index={i} incrementWallFootingFormCount={incrementWallFootingFormCount} setEarthworkValues={setEarthworkValues} />)}
                         <GravelBedding setEarthworkValues={setEarthworkValues} />
-                        {[...Array(septicTankFormCount)].map((e, i) => <SepticTankDetails key={i} index={i} incrementColumnFootingFormCount={incrementSepticTankFormCount} setEarthworkValues={setEarthworkValues} />)}
-                        {[...Array(onFillFormCount)].map((e, i) => <OnFill key={i} index={i} incrementColumnFootingFormCount={incrementOnFillFormCOunt} setEarthworkValues={setEarthworkValues} />)}
+                        {[...Array(septicTankFormCount)].map((e, i) => <SepticTankDetails key={i} index={i} incrementSepticTankFormCount={incrementSepticTankFormCount} setEarthworkValues={setEarthworkValues} />)}
+                        {[...Array(onFillFormCount)].map((e, i) => <OnFill key={i} index={i} incrementOnFillFormCount={incrementOnFillFormCount} setEarthworkValues={setEarthworkValues} />)}
                         <SlabDetail setEarthworkValues={setEarthworkValues} />
                         <Manpower setEarthworkValues={setEarthworkValues} />
                     </Col>
