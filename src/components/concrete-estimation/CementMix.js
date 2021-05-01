@@ -12,8 +12,8 @@ import {
 
 function WallFootingDetails(props) {
     const [cementMixValues, setCementMixValues] = useState({
-        classMixture: '',
-        cementBag: '',
+        classMixture: 'AA',
+        cementBag: '40kg',
         proportions: ''
     });
 

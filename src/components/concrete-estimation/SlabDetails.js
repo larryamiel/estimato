@@ -18,14 +18,16 @@ function SlabDetails(props) {
 
     useEffect(() => {
         props.setConcreteValues(value => {
+            
             value.slabDetailsValues[props.index] = {
                 slabValues: slabValues,
+                slabThickness: slabThickness,
                 slabCount: slabCount
             }
 
             return value;
         });
-    }, [slabValues, slabCount]);
+    }, [slabValues, slabThickness, slabCount]);
 
     return (
         <Card small className="mb-4">
@@ -90,7 +92,15 @@ function SlabDetails(props) {
                                 <Row form>
                                     <Col md="6" className="form-group">
                                         <label htmlFor="fw-sd-slab-vertical">Slab Thickness (cm)</label>
-                                        <FormInput type="number" id="fw-sd-slab-vertical" onChange={e => setSlabThickness(e.target.value)} placeholder="Enter slab vertical" />
+                                        <FormInput type="number" id="fw-sd-slab-vertical" onChange={e => {
+                                            var target = e.target;
+
+                                            setSlabThickness(slabThickness => {
+                                                slabThickness = target.value;
+
+                                                return slabThickness;
+                                            });
+                                        }} placeholder="Enter slab vertical" />
                                     </Col>
                                 </Row>
                             </Col>
