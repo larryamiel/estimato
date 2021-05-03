@@ -35,12 +35,6 @@ export default function() {
       to: "/estimations-masonry",
       htmlBefore: '<i class="material-icons">add</i>',
       htmlAfter: ""
-    },
-    {
-      title: "Add Steelworks Estimation",
-      to: "/estimations-steelworks",
-      htmlBefore: '<i class="material-icons">add</i>',
-      htmlAfter: ""
     }
   ];
 }

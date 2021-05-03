@@ -42,7 +42,7 @@ function BeamDetails(props) {
                         <Row>
                             <Col>
                                 <Row form>
-                                    <Col md="6" className="form-group">
+                                    <Col xxs="6" className="form-group">
                                         <label htmlFor="fw-bd-length">Length (x)</label>
                                         <FormInput type="number" id="fw-bd-length" onChange={e => setBeamDimensions(dimensions => {
                                             dimensions.x = e.target.value;
@@ -50,7 +50,7 @@ function BeamDetails(props) {
                                         })} placeholder="Enter length in meters" />
                                     </Col>
 
-                                    <Col md="6" className="form-group">
+                                    <Col xxs="6" className="form-group">
                                         <label htmlFor="fw-bd-width">Width (y)</label>
                                         <FormInput type="number" id="fw-bd-width" onChange={e => setBeamDimensions(dimensions => {
                                             dimensions.y = e.target.value;
@@ -60,21 +60,13 @@ function BeamDetails(props) {
                                 </Row>
                             </Col>
                         </Row>
-                    </ListGroupItem>
-                </ListGroup>
-            </CardBody>
 
-            <CardBody className="p-0 pb-3">
-                <ListGroup flush>
-                    <ListGroupItem className="p-3">
-                        <Row>
+                        <Row className="subdivision">
                             <Col md="12">
-                                <h4>Beams</h4>
-                            </Col>
-                            <Col md="12">
+                                <h2 className="subdivision-title">Beams</h2>
                                 {[...Array(beamCount)].map((e, i) => 
                                     <Row form key={i} id={i}>
-                                        <Col md="6" className="form-group">
+                                        <Col xxs="6" className="form-group">
                                             <label htmlFor="fw-bd-beam-length">Beam Length (m)</label>
                                             <FormInput type="number" id="fw-bd-beam-length" onChange={e => {
                                                 const target = e.target;
@@ -89,7 +81,7 @@ function BeamDetails(props) {
                                                 })
                                             }} placeholder="Enter length in meters" />
                                         </Col>
-                                        <Col md="6" className="form-group">
+                                        <Col xxs="6" className="form-group">
                                             <label htmlFor="fw-bd-beam-amount">Beam Amount</label>
                                             <FormInput type="number" id="fw-bd-beam-amount" onChange={e => {
                                                 const target = e.target;

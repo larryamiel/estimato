@@ -18,6 +18,17 @@ function WallFootingDetails(props) {
     });
 
     useEffect(() => {
+        setCementMixValues(object => {
+            if ( object.classMixture === 'AA' ) object.proportions = '1 : 1.5 : 3';
+            else if ( object.classMixture === 'A' ) object.proportions = '1 : 2 : 4';
+            else if ( object.classMixture === 'B' ) object.proportions = '1 : 2.5 : 53';
+            else if ( object.classMixture === 'C' ) object.proportions = '1 : 3 : 6';
+
+            return {...object};
+        })
+    }, []);
+
+    useEffect(() => {
         props.setConcreteValues(value => {
             value.cementMixValues = cementMixValues
 
@@ -45,7 +56,13 @@ function WallFootingDetails(props) {
 
                                                 setCementMixValues(object => {
                                                     object.classMixture = target.value;
-                                                    return object;
+
+                                                    if ( object.classMixture === 'AA' ) object.proportions = '1 : 1.5 : 3';
+                                                    else if ( object.classMixture === 'A' ) object.proportions = '1 : 2 : 4';
+                                                    else if ( object.classMixture === 'B' ) object.proportions = '1 : 2.5 : 53';
+                                                    else if ( object.classMixture === 'C' ) object.proportions = '1 : 3 : 6';
+
+                                                    return {...object};
                                                 })
                                         }} type="number" id="ew-wf-depth" >
                                             <option value="AA">AA</option>

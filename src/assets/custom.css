@@ -13,3 +13,37 @@
 .card-add-header .btn-add-header i {
     font-size: 14px;
 }
+
+.form-group label {
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+
+.form-group p {
+    margin-bottom: 0;
+    line-height: 35px;
+    padding-left: 8px;
+}
+
+.subdivision:not(:first-of-type) {
+    padding-top: 15px;
+}
+
+.subdivision:not(:last-of-type) {
+    border-bottom: 1px solid #3d5170;
+}
+
+.subdivision .subdivision-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.subdivision .subdivision-title::after {
+    content: " ";
+    width: 30px;
+    height: 2px;
+    background-color: #3d5170;
+
+    display: block;
+}

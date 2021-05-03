@@ -35,14 +35,9 @@ function SepticTankDetails(props) {
             <CardBody className="p-0 pb-3">
                 <ListGroup flush>
                     <ListGroupItem className="p-3">
-                        <Row>
+                        <Row className="subdivision">
                             <Col>
-                                <Row>
-                                    <Col>
-                                        <h4>Top Slab Details</h4>
-                                    </Col>
-                                </Row>
-
+                                <h2 className="subdivision-title">Top Slab Details</h2>
                                 <Row form>
                                     <Col xxsm="4" className="form-group">
                                         <label htmlFor="cc-septic-tank-x">Length (m)</label>
@@ -88,13 +83,12 @@ function SepticTankDetails(props) {
                                         }} id="cc-septic-tank-z" placeholder="Enter the value" />
                                     </Col>
                                 </Row>
+                            </Col>
+                        </Row>
 
-                                <Row>
-                                    <Col>
-                                        <h4>Bottom Slab Details</h4>
-                                    </Col>
-                                </Row>
-
+                        <Row className="subdivision">
+                            <Col>
+                                <h2 className="subdivision-title">Bottom Slab Details</h2>
                                 <Row form>
                                     <Col xxsm="6" className="form-group">
                                         <label htmlFor="cc-septic-tank-x">Length (m)</label>

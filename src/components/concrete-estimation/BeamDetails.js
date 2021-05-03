@@ -67,11 +67,9 @@ function BeamDetails(props) {
             <CardBody className="p-0 pb-3">
                 <ListGroup flush>
                     <ListGroupItem className="p-3">
-                        <Row>
+                        <Row className="subdivision">
                             <Col md="12">
-                                <h4>Beams</h4>
-                            </Col>
-                            <Col md="12">
+                                <h2 className="subdivision-title">Beams</h2>
                                 {[...Array(beamCount)].map((e, i) => 
                                     <Row form key={i} id={i}>
                                         <Col md="6" className="form-group">

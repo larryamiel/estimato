@@ -124,64 +124,63 @@ function ConcreteStairDetails(props) {
                                     </Col>
                                 </Row>
 
-                                <Row>
+                                <Row className="subdivision">
                                     <Col>
-                                        <h4>Landing</h4>
+                                        <h2 className="subdivision-title">Landing</h2>
+                                        {[...Array(landingCount)].map((e, i) => 
+                                            <Row form key={i}>
+                                                <Col xxs="4" className="form-group">
+                                                    <label htmlFor="fw-mc-lumber-0">Thickness of Landing (m)</label>
+                                                    <FormInput type="number" id="fw-mc-lumber-0" onChange={e => {
+                                                        const target = e.target;
+                                                        setConcreteStairValues(values => {
+                                                            // Push into the value to define it
+                                                            if (!values.landing[i]) values.landing[i] = {thickness_of_landing: '', landing_width: '', landing_length: ''};
+
+                                                            values.landing[i].thickness_of_landing = target.value;
+
+                                                            return values;
+                                                        });
+                                                    }} placeholder="Enter value in meters" />
+                                                </Col>
+                                                <Col xxs="4" className="form-group">
+                                                    <label htmlFor="fw-mc-lumber-1">Landing Width (m)</label>
+                                                    <FormInput type="number" id="fw-mc-lumber-1" onChange={e => {
+                                                        const target = e.target;
+                                                        setConcreteStairValues(values => {
+                                                            // Push into the value to define it
+                                                            if (!values.landing[i]) values.landing[i] = {thickness_of_landing: '', landing_width: '', landing_length: ''};
+                                                            
+                                                            values.landing[i].landing_width = target.value;
+
+                                                            return values;
+                                                        });
+                                                    }} placeholder="Enter value in meters" />
+                                                </Col>
+                                                <Col md="4" className="form-group">
+                                                    <label htmlFor="fw-mc-lumber-1">Landing Length (m)</label>
+                                                    <FormInput type="number" id="fw-mc-lumber-1" onChange={e => {
+                                                        const target = e.target;
+                                                        setConcreteStairValues(values => {
+                                                            // Push into the value to define it
+                                                            if (!values.landing[i]) values.landing[i] = {thickness_of_landing: '', landing_width: '', landing_length: ''};
+                                                            
+                                                            values.landing[i].landing_length = target.value;
+
+                                                            return values;
+                                                        });
+                                                    }} placeholder="Enter value in meters" />
+                                                </Col>
+                                            </Row>
+                                        )}
                                     </Col>
                                 </Row>
-
-                                {[...Array(landingCount)].map((e, i) => 
-                                    <Row form key={i}>
-                                        <Col md="4" className="form-group">
-                                            <label htmlFor="fw-mc-lumber-0">Thickness of Landing (m)</label>
-                                            <FormInput type="number" id="fw-mc-lumber-0" onChange={e => {
-                                                const target = e.target;
-                                                setConcreteStairValues(values => {
-                                                    // Push into the value to define it
-                                                    if (!values.landing[i]) values.landing[i] = {thickness_of_landing: '', landing_width: '', landing_length: ''};
-
-                                                    values.landing[i].thickness_of_landing = target.value;
-
-                                                    return values;
-                                                });
-                                            }} placeholder="Enter value in meters" />
-                                        </Col>
-                                        <Col md="4" className="form-group">
-                                            <label htmlFor="fw-mc-lumber-1">Landing Width (m)</label>
-                                            <FormInput type="number" id="fw-mc-lumber-1" onChange={e => {
-                                                const target = e.target;
-                                                setConcreteStairValues(values => {
-                                                    // Push into the value to define it
-                                                    if (!values.landing[i]) values.landing[i] = {thickness_of_landing: '', landing_width: '', landing_length: ''};
-                                                    
-                                                    values.landing[i].landing_width = target.value;
-
-                                                    return values;
-                                                });
-                                            }} placeholder="Enter value in meters" />
-                                        </Col>
-                                        <Col md="4" className="form-group">
-                                            <label htmlFor="fw-mc-lumber-1">Landing Length (m)</label>
-                                            <FormInput type="number" id="fw-mc-lumber-1" onChange={e => {
-                                                const target = e.target;
-                                                setConcreteStairValues(values => {
-                                                    // Push into the value to define it
-                                                    if (!values.landing[i]) values.landing[i] = {thickness_of_landing: '', landing_width: '', landing_length: ''};
-                                                    
-                                                    values.landing[i].landing_length = target.value;
-
-                                                    return values;
-                                                });
-                                            }} placeholder="Enter value in meters" />
-                                        </Col>
-                                    </Row>
-                                )}
 
                                 <Button type="submit" icon="add" onClick={e => {
                                     console.log(landingCount);
                                     
                                     setLandingCount(e => e + 1);
-                                }}>Add a Slab</Button>
+                                }}>Add a Landing</Button>
                             </Col>
                         </Row>
                     </ListGroupItem>

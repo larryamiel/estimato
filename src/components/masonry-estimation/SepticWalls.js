@@ -6,56 +6,45 @@ import {
     Col,
     FormInput,
     FormSelect,
-    Button,
     Card,
     CardHeader,
     CardBody
   } from "shards-react";
 
-function Walls(props) {
+function SepticWalls(props) {
     const [values, setValues] = useState({
-        wallHeight: '',
-        wallPerimeter: '',
+        septicDepth: '',
+        septicLength: '',
+        septicWidth: '',
         size_of_CHB: {
             cm: '10 x 20 x 40',
             inches: '4 x 8 x 16'
         },
         classMixture: 'A',
-        plasterThickness: '8',
-        doubleSided: 'Yes',
+        numberOfChambers: '',
         reinforcing_bars: {
             vertical_spacing: '40',
             horizontal_spacing: '2',
             rebar_length: '5',
             tie_wire_length: '25',
             rebar_diameter: '8'
-        },
-        door_window_gross_area: {
-            doors: [
-                {
-                    area: '',
-                    count: ''
-                }
-            ]
         }
     });
 
-    const [doorCount, setDoorCount] = useState(1);
-
     useEffect(() => {
         props.setMasonryValues(value => {
-            value.wallsValues[props.index] = values
+            value.septicWallValues = values
 
             return value;
         });
 
-        console.log(props.masonryValues.wallsValues);
+        console.log(props.masonryValues.septicWallValues);
     }, [values]);
 
     return (
         <Card small className="mb-4">
             <CardHeader className="border-bottom">
-                <h6 className="m-0">Walls</h6>
+                <h6 className="m-0">Septic Walls</h6>
 
                 {/* <button className="btn-add-header" onClick={() => {props.incrementColumnFootingFormCount()}}><i className="material-icons">add</i></button> */}
             </CardHeader>
@@ -66,27 +55,38 @@ function Walls(props) {
                             <Col>
                                 <h2 className="subdivision-title">Specifications</h2>
                                 <Row form>
-                                    <Col xxsm="6" className="form-group">
-                                        <label htmlFor="">Wall Height (m)</label>
+                                    <Col xxsm="4" className="form-group">
+                                        <label htmlFor="">Depth (m)</label>
                                         <FormInput onChange={e => {
                                             const target = e.target;
 
                                             setValues(values => {
-                                                values.wallHeight = target.value;
+                                                values.septicDepth = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].wallHeight : values.wallHeight} type="number" id="" placeholder="" />
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].septicDepth : values.septicDepth} type="number" id="" placeholder="" />
                                     </Col>
-                                    <Col xxsm="6" className="form-group">
-                                        <label htmlFor="">Wall Perimeter (m)</label>
+                                    <Col xxsm="4" className="form-group">
+                                        <label htmlFor="">Length (m)</label>
                                         <FormInput onChange={e => {
                                             const target = e.target;
 
                                             setValues(values => {
-                                                values.wallPerimeter = target.value;
+                                                values.septicLength = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].wallPerimeter : values.wallPerimeter} type="number" id="" placeholder="" />
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].septicLength : values.septicLength} type="number" id="" placeholder="" />
+                                    </Col>
+                                    <Col xxsm="4" className="form-group">
+                                        <label htmlFor="">Width (m)</label>
+                                        <FormInput onChange={e => {
+                                            const target = e.target;
+
+                                            setValues(values => {
+                                                values.septicWidth = target.value;
+                                                return {...values};
+                                            });
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].septicWidth : values.septicWidth} type="number" id="" placeholder="" />
                                     </Col>
                                 </Row>
 
@@ -105,7 +105,7 @@ function Walls(props) {
 
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].size_of_CHB.cm : values.size_of_CHB.cm} id="">
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].size_of_CHB.cm : values.size_of_CHB.cm} id="">
                                             <option value='10 x 20 x 40'>10 x 20 x 40</option>
                                             <option value='15 x 20 x 40'>15 x 20 x 40</option>
                                             <option value='20 x 20 x 40'>20 x 20 x 40</option>
@@ -113,7 +113,7 @@ function Walls(props) {
                                     </Col>
                                     <Col xxsm="6" className="form-group">
                                         <label htmlFor="">Size of CHB (inches)</label>
-                                        <p>{props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].size_of_CHB.inches : values.size_of_CHB.inches}</p>
+                                        <p>{props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].size_of_CHB.inches : values.size_of_CHB.inches}</p>
                                     </Col>
                                 </Row>
 
@@ -127,7 +127,7 @@ function Walls(props) {
                                                 values.classMixture = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].classMixture : values.classMixture} id="">
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].classMixture : values.classMixture} id="">
                                             <option value='A'>A</option>
                                             <option value='B'>B</option>
                                             <option value='C'>C</option>
@@ -135,38 +135,15 @@ function Walls(props) {
                                         </FormSelect>
                                     </Col>
                                     <Col xxsm="6" className="form-group">
-                                        <label htmlFor="">Plaster Thickness (mm)</label>
-                                        <FormSelect onChange={e => {
+                                        <label htmlFor="">Number of Chambers</label>
+                                        <FormInput onChange={e => {
                                             const target = e.target;
 
                                             setValues(values => {
-                                                values.plasterThickness = target.value;
+                                                values.numberOfChambers = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].plasterThickness : values.plasterThickness} id="">
-                                            <option value='8'>8</option>
-                                            <option value='12'>12</option>
-                                            <option value='16'>16</option>
-                                            <option value='20'>20</option>
-                                            <option value='25'>25</option>
-                                        </FormSelect>
-                                    </Col>
-                                </Row>
-
-                                <Row form>
-                                    <Col xxsm="12" className="form-group">
-                                        <label htmlFor="">Double Sided?</label>
-                                        <FormSelect onChange={e => {
-                                            const target = e.target;
-
-                                            setValues(values => {
-                                                values.doubleSided = target.value;
-                                                return {...values};
-                                            });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].doubleSided : values.doubleSided} id="">
-                                            <option value='Yes'>Yes</option>
-                                            <option value='No'>No</option>
-                                        </FormSelect>
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].numberOfChambers : values.numberOfChambers} id="" />
                                     </Col>
                                 </Row>
                             </Col>
@@ -185,7 +162,7 @@ function Walls(props) {
                                                 values.reinforcing_bars.vertical_spacing = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].reinforcing_bars.vertical_spacing : values.reinforcing_bars.vertical_spacing} id="">
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].reinforcing_bars.vertical_spacing : values.reinforcing_bars.vertical_spacing} id="">
                                             <option value='40'>40</option>
                                             <option value='60'>60</option>
                                             <option value='80'>80</option>
@@ -200,7 +177,7 @@ function Walls(props) {
                                                 values.reinforcing_bars.horizontal_spacing = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].reinforcing_bars.horizontal_spacing : values.reinforcing_bars.horizontal_spacing} id="">
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].reinforcing_bars.horizontal_spacing : values.reinforcing_bars.horizontal_spacing} id="">
                                             <option value='2'>2</option>
                                             <option value='3'>3</option>
                                             <option value='4'>4</option>
@@ -218,7 +195,7 @@ function Walls(props) {
                                                 values.reinforcing_bars.rebar_length = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].reinforcing_bars.rebar_length : values.reinforcing_bars.rebar_length} id="">
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].reinforcing_bars.rebar_length : values.reinforcing_bars.rebar_length} id="">
                                             <option value='5'>5</option>
                                             <option value='6'>6</option>
                                             <option value='7.5'>7.5</option>
@@ -235,7 +212,7 @@ function Walls(props) {
                                                 values.reinforcing_bars.tie_wire_length = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].reinforcing_bars.tie_wire_length : values.reinforcing_bars.tie_wire_length} id="">
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].reinforcing_bars.tie_wire_length : values.reinforcing_bars.tie_wire_length} id="">
                                             <option value='25'>25</option>
                                             <option value='30'>30</option>
                                             <option value='40'>40</option>
@@ -250,7 +227,7 @@ function Walls(props) {
                                                 values.reinforcing_bars.rebar_diameter = target.value;
                                                 return {...values};
                                             });
-                                        }} value={props.masonryValues.wallsValues[props.index] ? props.masonryValues.wallsValues[props.index].reinforcing_bars.rebar_diameter : values.reinforcing_bars.rebar_diameter} id="">
+                                        }} value={props.masonryValues.septicWallValues[props.index] ? props.masonryValues.septicWallValues[props.index].reinforcing_bars.rebar_diameter : values.reinforcing_bars.rebar_diameter} id="">
                                             <option value='8'>8</option>
                                             <option value='10'>10</option>
                                             <option value='12'>12</option>
@@ -268,51 +245,6 @@ function Walls(props) {
                                 </Row>
                             </Col>
                         </Row>
-
-                        <Row className="subdivision">
-                            <Col>
-                                <h2 className="subdivision-title">Door/Window Gross Area</h2>
-                                <Row form>
-                                    <Col md="12">
-                                        {[...Array(doorCount)].map((e, i) => 
-                                            <Row form key={i} id={i}>
-                                                <Col xxs="6" className="form-group">
-                                                    <label htmlFor="fw-sd-slab-horizontal">Area (m²)</label>
-                                                    <FormInput type="number" id="fw-sd-slab-horizontal" onChange={e => {
-                                                        const target = e.target;
-
-                                                        setValues(value => {
-                                                            // Push into the value to define it
-                                                            if (! value.door_window_gross_area.doors[i]) value.door_window_gross_area.doors[i] = {area: '', count: ''};
-
-                                                            value.door_window_gross_area.doors[i].area = target.value;
-                                                            return value;
-                                                        })
-                                                    }} placeholder="Enter horizontal in meters" />
-                                                </Col>
-                                                <Col xxs="6" className="form-group">
-                                                    <label htmlFor="fw-sd-slab-vertical">Number</label>
-                                                    <FormInput type="number" id="fw-sd-slab-vertical" onChange={e => {
-                                                        const target = e.target;
-
-                                                        setValues(value => {
-                                                            // Push into the value to define it
-                                                            if (! value.door_window_gross_area.doors[i]) value.door_window_gross_area.doors[i] = {area: '', count: ''};
-
-                                                            value.door_window_gross_area.doors[i].count = target.value;
-                                                            return value;
-                                                        })
-                                                    }} placeholder="Enter vertical" />
-                                                </Col>
-                                            </Row>
-                                        )}
-                                        <Button type="submit" icon="add" onClick={e => {
-                                            setDoorCount(e => e + 1);
-                                        }}>Add a Door/Window</Button>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
                     </ListGroupItem>
                 </ListGroup>
             </CardBody>
@@ -320,4 +252,4 @@ function Walls(props) {
     );
 }
 
-export default Walls;
+export default SepticWalls;

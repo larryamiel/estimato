@@ -37,14 +37,12 @@ function SlabDetails(props) {
             <CardBody className="p-0 pb-3">
                 <ListGroup flush>
                     <ListGroupItem className="p-3">
-                        <Row>
+                        <Row className="subdivision">
                             <Col md="12">
-                                <h4>Slabs</h4>
-                            </Col>
-                            <Col md="12">
+                                <h2 className="subdivision-title">Slabs</h2>
                                 {[...Array(slabCount)].map((e, i) => 
                                     <Row form key={i} id={i}>
-                                        <Col md="6" className="form-group">
+                                        <Col xxs="6" className="form-group">
                                             <label htmlFor="fw-sd-slab-horizontal">Slab Horizontal (m)</label>
                                             <FormInput type="number" id="fw-sd-slab-horizontal" onChange={e => {
                                                 const target = e.target;
@@ -59,7 +57,7 @@ function SlabDetails(props) {
                                                 })
                                             }} placeholder="Enter horizontal in meters" />
                                         </Col>
-                                        <Col md="6" className="form-group">
+                                        <Col xxs="6" className="form-group">
                                             <label htmlFor="fw-sd-slab-vertical">Slab Vertical (m)</label>
                                             <FormInput type="number" id="fw-sd-slab-vertical" onChange={e => {
                                                 const target = e.target;

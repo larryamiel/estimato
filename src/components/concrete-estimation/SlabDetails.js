@@ -40,14 +40,27 @@ function SlabDetails(props) {
             <CardBody className="p-0 pb-3">
                 <ListGroup flush>
                     <ListGroupItem className="p-3">
-                        <Row>
-                            <Col md="12">
-                                <h4>Slabs</h4>
+                        <Row form>
+                            <Col md="6" className="form-group">
+                                <label htmlFor="fw-sd-slab-vertical">Slab Thickness (cm)</label>
+                                <FormInput type="number" id="fw-sd-slab-vertical" onChange={e => {
+                                    var target = e.target;
+
+                                    setSlabThickness(slabThickness => {
+                                        slabThickness = target.value;
+
+                                        return slabThickness;
+                                    });
+                                }} placeholder="Enter slab vertical" />
                             </Col>
+                        </Row>
+
+                        <Row className="subdivision">
                             <Col md="12">
+                                <h2 className="subdivision-title">Slabs</h2>
                                 {[...Array(slabCount)].map((e, i) => 
                                     <Row form key={i} id={i}>
-                                        <Col md="6" className="form-group">
+                                        <Col xxs="6" className="form-group">
                                             <label htmlFor="fw-sd-slab-horizontal">Slab Horizontal (m)</label>
                                             <FormInput type="number" id="fw-sd-slab-horizontal" onChange={e => {
                                                 const target = e.target;
@@ -62,7 +75,7 @@ function SlabDetails(props) {
                                                 })
                                             }} placeholder="Enter horizontal in meters" />
                                         </Col>
-                                        <Col md="6" className="form-group">
+                                        <Col xxs="6" className="form-group">
                                             <label htmlFor="fw-sd-slab-vertical">Slab Vertical (m)</label>
                                             <FormInput type="number" id="fw-sd-slab-vertical" onChange={e => {
                                                 const target = e.target;
@@ -78,7 +91,6 @@ function SlabDetails(props) {
                                         </Col>
                                     </Row>
                                 )}
-
                                 <Row className="pb-3">
                                     <Col>
                                         <Button type="submit" icon="add" onClick={e => {
@@ -86,21 +98,6 @@ function SlabDetails(props) {
                                             
                                             setSlabCount(e => e + 1);
                                         }}>Add a Slab</Button>
-                                    </Col>
-                                </Row>
-                                
-                                <Row form>
-                                    <Col md="6" className="form-group">
-                                        <label htmlFor="fw-sd-slab-vertical">Slab Thickness (cm)</label>
-                                        <FormInput type="number" id="fw-sd-slab-vertical" onChange={e => {
-                                            var target = e.target;
-
-                                            setSlabThickness(slabThickness => {
-                                                slabThickness = target.value;
-
-                                                return slabThickness;
-                                            });
-                                        }} placeholder="Enter slab vertical" />
                                     </Col>
                                 </Row>
                             </Col>
