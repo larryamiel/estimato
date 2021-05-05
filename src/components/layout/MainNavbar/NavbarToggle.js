@@ -13,6 +13,7 @@ class NavbarToggle extends React.Component {
     Dispatcher.dispatch({
       actionType: Constants.TOGGLE_SIDEBAR
     });
+    console.log('toggle open');
   }
 
   render() {

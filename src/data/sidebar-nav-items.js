@@ -2,7 +2,7 @@ export default function() {
   return [
     {
       title: "Estimations",
-      to: "/estimations",
+      to: "/",
       htmlBefore: '<i class="material-icons">edit</i>',
       htmlAfter: ""
     },

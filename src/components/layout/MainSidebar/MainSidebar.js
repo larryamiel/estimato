@@ -14,7 +14,7 @@ class MainSidebar extends React.Component {
     super(props);
 
     this.state = {
-      menuVisible: false,
+      menuVisible: true,
       sidebarNavItems: Store.getSidebarItems()
     };
 
@@ -42,8 +42,10 @@ class MainSidebar extends React.Component {
       "main-sidebar",
       "px-0",
       "col-12",
-      this.state.menuVisible && "open"
+      this.state.menuVisible ? "open" : ""
     );
+
+    console.log(this.state.menuVisible, classes);
 
     return (
       <Col

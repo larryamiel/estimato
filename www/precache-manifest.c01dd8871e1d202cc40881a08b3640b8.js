@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "924b1cb1acf45e7e0b13",
+    "revision": "accdf352c538178f06f8",
     "url": "./static/css/main.9f1d2e8e.chunk.css"
   },
   {
-    "revision": "924b1cb1acf45e7e0b13",
-    "url": "./static/js/main.924b1cb1.chunk.js"
+    "revision": "accdf352c538178f06f8",
+    "url": "./static/js/main.accdf352.chunk.js"
   },
   {
-    "revision": "dc1121538c5c5ee134a5",
+    "revision": "b266d5a74ae3e03183e8",
     "url": "./static/css/1.29b883ae.chunk.css"
   },
   {
-    "revision": "dc1121538c5c5ee134a5",
-    "url": "./static/js/1.dc112153.chunk.js"
+    "revision": "b266d5a74ae3e03183e8",
+    "url": "./static/js/1.b266d5a7.chunk.js"
   },
   {
     "revision": "4a686d48d5a089750c49",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "./static/media/shards-dashboards-logo.60a85991.svg"
   },
   {
-    "revision": "48f6204a1907dbad2713f17fadd7a6e5",
+    "revision": "bf5e5a18166ada102d217826970af6cf",
     "url": "./index.html"
   }
 ];
